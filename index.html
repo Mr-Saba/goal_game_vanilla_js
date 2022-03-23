@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GOAL• Turbo Game</title>
+        <link rel="icon" href="./assets/favicon.png" type="image/png" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="https://kit.fontawesome.com/4e90d0d555.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+    <div class="container">
+        <div class="balanceNav">
+            <div class="balanceArea">
+                <div id="balance">100.00</div>
+                <div>$</div>
+            </div>
+            <div class="win"></div>
+            <div class="error"></div>
+        </div>
+        <div class="main">
+            <nav class="navigation">
+                <div>
+                    <img class="goalimage" src="https://turbo-next.spribegaming.com/icon-goal_white.f9e57d9b791fcc1fc966.svg"/>
+                    <div class="goal">GOAL</div>
+                    <div class="fairBox">
+                        
+                        <img src="./assets/shield-check.svg" />
+                        <div>Provably Fair</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="how guideButton">How to play?</div>
+                    <img id="sidebarLogo" class="list" src="./assets/list.svg" />
+                </div>
+            </nav>
+            <div class="layout">
+                <!-- game -->
+                <div class="box">
+                    <!-- manual -->
+                    <div class="parameters">
+                        <div class="buttons">
+                            <div id="auto_manual">
+                                <button class="active">Manual</button>
+                                <button>Auto</button>
+                            </div>
+                        </div>
+                        <div class="bet">
+                            <div class="amount">
+                                <div class="betTitle">Bet amount $</div>
+                                <div class="amountArea">
+                                    <button class="plus_minus">-</button>
+                                    <h3 contentEditable id="bet">0.10</h3>
+                                    <button class="plus_minus">+</button>
+                                </div>
+                            </div>
+                            <div class="amountButtons">
+                                <button>1$</button>
+                                <button>3$</button>
+                                <button>5$</button>
+                                <button>10$</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="fieldTitle">
+                                Field Size
+                            </div>
+                            <div class="sizeButtons">
+                                <button>Small</button>
+                                <button class="active">Medium</button>
+                                <button>Big</button>
+                            </div>
+                        </div>
+                        <!-- auto -->
+                        <div class="auto">
+                            <div class="field" id="onWin">
+                                <div class="fieldTitle">
+                                    On Win
+                                </div>
+                                <div class="fieldButtons">
+                                    <button class="active">Return to base</button>
+                                    <button>
+                                        Increase
+                                        <div class="percent">
+                                            <div contentEditable class="innerPercent">100</div>
+                                            <div class="percentLogo">%</div>
+                                        </div>
+                                        
+                                    </button>
+                                    <button>
+                                        Decrease
+                                        <div class="percent">
+                                            <div contentEditable class="innerPercent">50</div>
+                                            <div class="percentLogo">%</div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="field" id="onLoss">
+                                <div class="fieldTitle">
+                                    On Loss
+                                </div>
+                                <div class="fieldButtons">
+                                    <button class="active">Return to base</button>
+                                    <button>
+                                        Increase
+                                        <div class="percent">
+                                            <div contentEditable class="innerPercent">100</div>
+                                            <div class="percentLogo">%</div> 
+                                        </div>
+                                    </button>
+                                    <button>
+                                        Decrease
+                                        <div class="percent">
+                                            <div contentEditable class="innerPercent">50</div>
+                                            <div class="percentLogo">%</div> 
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <button id="randomSelect" class="randomSelect">select randomly</button>
+                            <button id="play" class="betButton">play</button>
+                            <button id="stop" class="stopButton">stop</button>
+                        </div>
+                        <button id="start" class="betButton">bet</button>
+                        <button id="cashout" class="cashoutButton"></button>
+                    </div>
+                    
+                        <!-- <button id="cashout" class="cashoutButton"></button> -->
+
+                    <!-- small board -->
+
+                    <div class="board" id="small">
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x1.45</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x2.18</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x3.27</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x4.91</div></div>
+                        </div>
+                        <div class="singleMultiplier">multiplier <div>x4.91</div></div>
+                    </div>
+
+                    <!-- medium board -->
+
+                    <div class="board active" id="medium">
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x1.29</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x1.72</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x2.29</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x3.06</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x4.08</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x5.45</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x7.26</div></div>
+                        </div>
+                        <div class="singleMultiplier">multiplier <div >x7.26</div></div>
+                    </div>
+
+
+                    <!-- big board -->
+
+                    <div class="board" id="big">
+                        <div class="boardColumn">
+                            <div class="boardItem">
+                            </div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x1.21</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+
+                            <div class="multiplier"><div>x1.51</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+
+                            <div class="multiplier"><div>x1.89</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+
+                            <div class="multiplier"><div>x2.36</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+
+                            <div class="multiplier"><div>x2.96</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+
+                            <div class="multiplier"><div>x3.70</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x4.62</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x5.78</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x7.22</div></div>
+                        </div>
+                        <div class="boardColumn">
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="boardItem"></div>
+                            <div class="multiplier"><div>x9.03</div></div>
+                        </div>
+                        <div class="singleMultiplier">multiplier <div>x9.03</div></div>
+                    </div>
+
+                </div>
+                <!-- sidemenu -->
+                <div id="sideMenu" class="sideMenu">
+                    <div class="innerSideMenu">
+                        <div>
+                            <div class="sideMenuItem">
+                                <img src="https://turbo-next.spribegaming.com/volume.a53510ebf57ef9b14ed6.svg" />
+                                <p>Volume</p>
+                                <img id="volume" class="toggle" src="./assets/toggle-on.svg" />
+                            </div>
+                            <div class="sideMenuItem">
+                                <img src="https://turbo-next.spribegaming.com/animation.2dd9b8d3a773842d916b.svg" />
+                                <p>Animation</p>
+                                <img id="animation" class="toggle" src="./assets/toggle-on.svg" />
+                            </div>
+                            <div class="sideMenuItem hoverable">
+                                <img src="https://turbo-next.spribegaming.com/provably-fair.5d422b1e6f1de920aa59.svg" />
+                                <p>Provably Fair</p>
+                            </div>
+                            <div class="sideMenuItem hoverable historyButton">
+                                <img src="https://turbo-next.spribegaming.com/history.62d677e43524fc4c0be1.svg" />
+                                <p>Bets History</p>
+                            </div>
+                            <div class="sideMenuItem hoverable">
+                                <img src="https://turbo-next.spribegaming.com/free-bets.5f5e04d1306ecce6540e.svg" />
+                                <p>Free Bets</p>
+                            </div>
+                            <div class="sideMenuItem hoverable guideButton">
+                                <img src="https://turbo-next.spribegaming.com/help.e91db403bcb7dbaf6920.svg" />
+                                <p>How To Play</p>
+                            </div>
+                        </div>
+                        <div class="banner">
+                            <div class="bannerItem">
+                            </div>
+                            <div class="bannerItem">
+                                <img src="https://turbo-next.spribegaming.com/icon-goal_white.f9e57d9b791fcc1fc966.svg"/>
+                                <div class="bannerTitle">Goal</div>
+                            </div>
+                            <div class="bannerItem">
+                                <a href="https://spribe.co/welcome" target="blank">© Spribe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modals -->
+            <!-- how to play -->
+            <div id="guideModal" class="modal" style="display: none">
+                <div class="modalContent">
+                    <div class="modalNav">
+                        <div>how to play</div>
+                        <img class="guideModalX" src="./assets/x.svg" />
+                    </div>
+                    <img class="tablePhoto" src="https://turbo-next.spribegaming.com/hint-goal.a84a2446dfda37f18733.svg"></img>
+                    <p>There is one bomb in each row of the field</p>
+                    <p>For each successful step your winnings increase. You can cash them out anytime</p>
+                    <div class="betGuide">
+                        <div class="betGuideItem">
+                            <div>Min. bet:</div>
+                            <div>0.1$</div>
+                        </div>
+                        <div class="betGuideItem">
+                            <div>Max. bet:</div>
+                            <div>100$</div>
+                        </div>
+                    </div>
+                    <button class="guideModalX">got it</button>
+                </div>
+            </div>
+
+            <!-- bets history -->
+            <div id="historyModal" class="modal1" style="display: none" >
+                <div class="modalContent1">
+                    <div class="modalNav">
+                        <div>game history</div>
+                        <img class="historyModalX" src="./assets/x.svg" />
+                    </div>
+                    <div class="dateArea">
+                        <div></div>
+                        <div class="active dateFilterButton">Today</div>
+                        <div class="dateFilterButton">Yesterday</div>
+                        <div class="dateFilterButton">Select Range</div>
+                    </div>
+                    <div class="tableArea">
+
+                        <table>
+                            <tr>
+                              <th>Time</th>
+                              <th>Bet</th>
+                              <th>Payout</th>
+                              <th>Profit</th>
+                              <th></th>
+                            </tr>
+                            <!-- <tr>
+                              <td>23 Mar 2022, 13:30</td>
+                              <td>0.1 USD</td>
+                              <td>1.29x</td>
+                              <td>0.03 USD</td>
+                              <td><img src="https://turbo-next.spribegaming.com/icon-provabyfair.3400ef408d35231db293.svg"/></td>
+                            </tr> -->
+                        </table>
+                    </div>
+                    
+                
+                    <button>load more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
